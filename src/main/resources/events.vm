@@ -1,8 +1,13 @@
 #if($events.size()>0)
+<div class="row">
+
+<div class="col-md-10">
+
+
 <h4>Events</h4>
 <ul>
 #foreach( $event in $events )
-	<li>
+	<li class="$event.type.replace(' ','-')">
 		In $event.date, $event.shortDescription
 		#if($event.collection) 
 		<a class="glyphicon glyphicon-search" role="button" data-toggle="popover" data="$event.collection.url"></a>
@@ -11,3 +16,28 @@
 #end
 </ul>
 #end
+
+</div>
+<div class="col-md-2">
+<div data-spy="affix">
+	<h5>Filter</h5>
+	#foreach($type in $Event.getTypes($events))
+	<input id="$type.replace(' ','-')" type="checkbox" checked="checked" class="event-filter"> $type<br/>
+	#end
+</div>
+
+</div>
+
+</div>
+
+<script>
+	$(function() {
+		$(".event-filter").change(function() {
+			if($(this).is(":checked")) {
+				$("."+$(this).attr("id")).show();
+			} else {
+				$("."+$(this).attr("id")).hide();
+			}
+		});
+	});
+</script>
