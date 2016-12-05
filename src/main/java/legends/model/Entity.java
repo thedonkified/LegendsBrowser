@@ -162,21 +162,36 @@ public class Entity extends AbstractObject {
 			return "#333";
 		case "goblin":
 		case "goblins":
-			return "#CC0000";
+			return "#F0F";
 		case "elf":
 		case "elves":
 			return "#99FF00";
 		case "dwarf":
 		case "dwarves":
-			return "#FFCC33";
+			return "#24E741";
 		case "human":
 		case "humans":
 			return "#0000CC";
 		case "necromancer":
 		case "necromancers":
 			return "#A0A";
+		case "jotun":
+		case "jotuns":
+			return "#FCF3CF";
+		case "mandre":
+		case "mandres":
+			return "#8BDFF8";
+		case "orc":
+		case "orcs":
+			return "#30095E";
+		case "gnoll":
+		case "gnolls":
+			return "#242FE7";
+		case "arthra":
+		case "arthras":
+			return "#CC0000";
 		default:
-			return "#F0F";
+			return "#24E7DB";
 		}
 	}
 
